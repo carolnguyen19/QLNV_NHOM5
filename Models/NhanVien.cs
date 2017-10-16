@@ -16,8 +16,7 @@ namespace QLNV_NHOM5
 
         [StringLength(50)]
         public string TenNV { get; set; }
-
-        [DataType(DataType.Date)]
+        
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? NgaySinh { get; set; }
 

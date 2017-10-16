@@ -56,6 +56,8 @@ namespace QLNV_NHOM5.Controllers
         // GET: NhanViens/Create
         public ActionResult Create()
         {
+            SetViewBagLoai();
+            SetViewBagPhong();
             return View();
         }
 
@@ -70,13 +72,15 @@ namespace QLNV_NHOM5.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            SetViewBagLoai();
+            SetViewBagPhong();
             return View(nhanVien);
         }
 
         // GET: NhanViens/Edit/5
         public ActionResult Edit(long? id)
         {
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -86,6 +90,12 @@ namespace QLNV_NHOM5.Controllers
             {
                 return HttpNotFound();
             }
+            //SetViewBagNgaySinh();
+            var model = new NhanVien();
+            model.NgaySinh = nhanVien.NgaySinh;
+            SetViewBagLoai(nhanVien.LoaiNV);
+            SetViewBagPhong(nhanVien.MaPhong);
+
             return View(nhanVien);
         }
 
@@ -96,17 +106,21 @@ namespace QLNV_NHOM5.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaNV,TenNV,NgaySinh,LoaiNV,MaPhong,Luong,SoNgayLam,BacLuong,PhuCap,TongLuong")] NhanVien nhanVien)
         {
+            
             if (ModelState.IsValid)
             {
                 db.Entry(nhanVien).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            //SetViewBagNgaySinh();
+            SetViewBagLoai();
+            SetViewBagPhong();
             return View(nhanVien);
         }
 
         // GET: NhanViens/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(long? id)
         {
             if (id == null)
             {
@@ -123,7 +137,7 @@ namespace QLNV_NHOM5.Controllers
         // POST: NhanViens/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(long? id)
         {
             NhanVien nhanVien = db.NhanViens.Find(id);
             db.NhanViens.Remove(nhanVien);
@@ -140,6 +154,7 @@ namespace QLNV_NHOM5.Controllers
             base.Dispose(disposing);
         }
 
+        //Dùng để filter ds nhân viên theo phòng
         public void SetViewBag(string selectedMaPhong = null)
         {
             ViewBag.ddl = new SelectList(db.Phongs.ToList(), "MaPhong", "TenPhong", 
@@ -147,7 +162,27 @@ namespace QLNV_NHOM5.Controllers
 
         }
 
-       
+        public void SetViewBagLoai(int? selectedLoai = 0)
+        {
+            var categories = new List<SelectListItem>
+            {
+                new SelectListItem {Text = "Công nhật", Value = "0"},
+                new SelectListItem {Text = "Biên chế", Value = "1"}
+            };
+            ViewBag.LoaiNV = new SelectList(categories, "Value", "Text",
+                                                selectedLoai);
+        }
+
+        public void SetViewBagPhong(string selectedPhong = null)
+        {
+            ViewBag.MaPhong = new SelectList(db.Phongs.ToList(), "MaPhong", "TenPhong",
+                                                selectedPhong);
+        }
+
+        public void SetViewBagNgaySinh(DateTime? selectedNgaySinh = null)
+        {
+            ViewBag.DefaultNgaySinh = "19/09/1966";
+        }
 
     }
 }
