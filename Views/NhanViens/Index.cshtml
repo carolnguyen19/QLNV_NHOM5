@@ -34,18 +34,7 @@
         <th>
             Phòng
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Luong)
-        </th>
-        <th>
-            Số ngày làm
-        </th>
-        <th>
-            Bậc lương
-        </th>
-        <th>
-            Phụ cấp
-        </th>
+        
         <th>
             Tổng lương
         </th>
@@ -67,24 +56,12 @@
             @Html.DisplayFor(modelItem => item.MaPhong)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Luong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoNgayLam)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BacLuong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhuCap)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.TongLuong)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaNV }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaNV }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaNV })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaNV }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaNV }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaNV })
         </td>
     </tr>
 }
