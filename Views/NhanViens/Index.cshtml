@@ -1,0 +1,92 @@
+﻿@model IEnumerable<QLNV_NHOM5.NhanVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        @*Nhớ nha*@
+        Xem theo phòng: @Html.DropDownList("ddl", ViewBag.VBMaPhong as SelectList, "Tất cả")
+        
+        <input type="submit" value="Xem" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            Họ tên
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        <th>
+            Loại
+        </th>
+        <th>
+            Phòng
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Luong)
+        </th>
+        <th>
+            Số ngày làm
+        </th>
+        <th>
+            Bậc lương
+        </th>
+        <th>
+            Phụ cấp
+        </th>
+        <th>
+            Tổng lương
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaPhong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Luong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoNgayLam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BacLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhuCap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongLuong)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaNV }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaNV }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaNV })
+        </td>
+    </tr>
+}
+
+</table>
