@@ -1,0 +1,59 @@
+﻿@model QLNV_NHOM5.NhanVien
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NhanVien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNV)
+        </dd>
+
+        <dt>
+            Lương tháng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Luong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BacLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BacLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhuCap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhuCap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongLuong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaNV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

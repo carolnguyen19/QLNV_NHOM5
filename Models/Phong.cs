@@ -11,8 +11,10 @@ namespace QLNV_NHOM5
     {
         [Key]
         [StringLength(10)]
+        [Display(Name = "Mã phòng")]
         public string MaPhong { get; set; }
 
+        [Display(Name = "Tên phòng")]
         [StringLength(50)]
         public string TenPhong { get; set; }
     }

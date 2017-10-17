@@ -1,0 +1,40 @@
+﻿@model IEnumerable<QLNV_NHOM5.Phong>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Phòng ban</h2>
+
+<p>
+    @Html.ActionLink("Tạo phòng mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaPhong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenPhong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaPhong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenPhong)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.MaPhong.Trim() }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaPhong.Trim() }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaPhong.Trim() })
+        </td>
+    </tr>
+}
+
+</table>

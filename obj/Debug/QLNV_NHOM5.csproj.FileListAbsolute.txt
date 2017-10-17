@@ -54,8 +54,8 @@ D:\A-DAIHOC\A-Nam4\OOD\QLNV_NHOM5\QLNV_NHOM5\bin\EntityFramework.dll
 D:\A-DAIHOC\A-Nam4\OOD\QLNV_NHOM5\QLNV_NHOM5\bin\EntityFramework.SqlServer.dll
 D:\A-DAIHOC\A-Nam4\OOD\QLNV_NHOM5\QLNV_NHOM5\bin\EntityFramework.xml
 D:\A-DAIHOC\A-Nam4\OOD\QLNV_NHOM5\QLNV_NHOM5\bin\EntityFramework.SqlServer.xml
-D:\A-DAIHOC\A-Nam4\OOD\QLNV_NHOM5\QLNV_NHOM5\obj\Debug\QLNV_NHOM5.csprojResolveAssemblyReference.cache
 D:\A-DAIHOC\A-Nam4\OOD\QLNV_NHOM5\QLNV_NHOM5\bin\PagedList.dll
 D:\A-DAIHOC\A-Nam4\OOD\QLNV_NHOM5\QLNV_NHOM5\bin\PagedList.Mvc.dll
 D:\A-DAIHOC\A-Nam4\OOD\QLNV_NHOM5\QLNV_NHOM5\bin\PagedList.xml
 D:\A-DAIHOC\A-Nam4\OOD\QLNV_NHOM5\QLNV_NHOM5\bin\PagedList.Mvc.xml
+D:\A-DAIHOC\A-Nam4\OOD\QLNV_NHOM5\QLNV_NHOM5\obj\Debug\QLNV_NHOM5.csprojResolveAssemblyReference.cache

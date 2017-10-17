@@ -166,8 +166,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BienCheController.cs" />
+    <Compile Include="Controllers\CongNhatController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NhanViensController.cs" />
+    <Compile Include="Controllers\PhongController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -460,6 +463,17 @@
     <Content Include="Views\NhanViens\Details.cshtml" />
     <Content Include="Views\NhanViens\Edit.cshtml" />
     <Content Include="Views\NhanViens\Index.cshtml" />
+    <Content Include="Views\CongNhat\Details.cshtml" />
+    <Content Include="Views\CongNhat\Edit.cshtml" />
+    <Content Include="Views\CongNhat\Index.cshtml" />
+    <Content Include="Views\BienChe\Details.cshtml" />
+    <Content Include="Views\BienChe\Edit.cshtml" />
+    <Content Include="Views\BienChe\Index.cshtml" />
+    <Content Include="Views\Phong\Create.cshtml" />
+    <Content Include="Views\Phong\Delete.cshtml" />
+    <Content Include="Views\Phong\Details.cshtml" />
+    <Content Include="Views\Phong\Edit.cshtml" />
+    <Content Include="Views\Phong\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<QLNV_NHOM5.NhanVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Nhân viên công nhật</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Họ tên
+        </th>
+        <th>
+            Lương ngày
+        </th>
+        <th>
+            Số ngày làm
+        </th>
+        <th>
+            Tổng lương
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Luong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoNgayLam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongLuong)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaNV }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaNV })
+        </td>
+    </tr>
+}
+
+</table>
